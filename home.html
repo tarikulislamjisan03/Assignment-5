@@ -16,6 +16,11 @@
   
 
 }
+.active{
+    background-color: rgb(5, 128, 227);
+    color: white !important;
+}
+  
     
 </style>
   
@@ -23,10 +28,10 @@
 </head>
 <body class="w-[1450px] mx-auto mt-5 geist">
     <header>
-        <section class="flex items-center justify-between shadow-lg p-4 ">
+        <section class="flex items-center justify-between shadow-lg p-4 mb-6 ">
            <div class="flex items-center gap-2 ">
              <div class="">
-                <img class="w-10 "  src="/B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
+                <img class="w-10 "  src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
             </div>
             <div>
                 <h1 class="text-2xl">Github Issues Tracker</h1>
@@ -56,7 +61,41 @@
         </section>
     </header>
     <main>
-
+<!-- btn -->
+ <section class="flex gap-2 mt-5 shadow-lg w-[1300px] mx-auto p-3 " id="button-contaier">
+    <div>
+        <button id="all"  onclick="dynamicbtn('all')" class="active border px-8 py-1 text-gray-600 rounded-md button">All</button>
+    </div>
+    <div>
+        <button id="open" onclick="dynamicbtn('open')" class="  border px-8 py-1 text-gray-600 rounded-md button">Open</button>
+    </div>
+    <div>
+        <button id="close" onclick="dynamicbtn('close')" class="border text-gray-600 px-8 py-1 rounded-md button ">Closed</button>
+    </div>
+ </section>
+ <!-- count card -->
+  <section>
+    <div>
+        <!-- track and manage -->
+        <div class="flex items-center gap-2">
+            <div>
+                <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+            </div>
+            <div>
+                <h1>50 Issues</h1>
+                <p>Track and Manage your project issues</p>
+            </div>
+        </div>
+        <!-- open closed section -->
+        <div>
+            <div>
+                <div>
+                    <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
     </main>
     <script src="script.js"></script>
 </body>
