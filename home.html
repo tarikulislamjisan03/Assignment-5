@@ -4,14 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+    .geist{
+        
+
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  
+
+}
+    
+</style>
+  
     
 </head>
-<body>
+<body class="w-[1450px] mx-auto mt-5 geist">
     <header>
-
+        <section class="flex items-center justify-between shadow-lg p-4 ">
+           <div class="flex items-center gap-2 ">
+             <div class="">
+                <img class="w-10 "  src="/B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
+            </div>
+            <div>
+                <h1 class="text-2xl">Github Issues Tracker</h1>
+            </div>
+           </div>
+           <!-- search and new issues -->
+          <div class="flex items-center justify-between gap-2">
+             <!-- search issues -->
+           <div class="flex items-center gap-1 border border-gray-300 p-2 rounded-lg">
+            <div>
+                <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+            </div>
+            <div>
+                <input type="text" placeholder="search issues...." class="border-none" >
+            </div>
+           </div>
+           <!-- new issues -->
+           <div class="flex bg-blue-600 px-5 py-2 gap-1 items-center rounded-md">
+            <div>
+                <i class="fa-solid fa-plus text-white"></i>
+            </div>
+            <div>
+                <p class="text-white">New Issue</p>
+            </div>
+           </div>
+          </div>
+        </section>
     </header>
     <main>
-<h1>Welcome </h1>
+
     </main>
     <script src="script.js"></script>
 </body>
