@@ -59,7 +59,7 @@ const displayCard=(cards)=>{
    for (const card of cards) {
     console.log(card)
     const newdiv=document.createElement("div")
-    newdiv.className = "w-full  p-5 space-y-4  rounded-lg overflow-hidden ";
+    newdiv.className = "w-full h-full  p-5 space-y-4  rounded-lg overflow-hidden ";
     newdiv.innerHTML=`
        <div class="w-[300px] shadow-lg p-5 space-y-4 id="child-container">
             <!-- prioty -->
@@ -68,7 +68,7 @@ const displayCard=(cards)=>{
                 <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
             </div>
             <div>
-                <p class="bg-blue-300">${card.priority}</p>
+                <p class="bg-blue-400 px-4 py-1 rounded-md">${card.priority}</p>
             </div>
         </div>
         <div>
