@@ -113,6 +113,17 @@ const displayCard=(cards)=>{
         newdiv.classList.add("purple")
     }
     
+    
 
    }
+}
+
+// search 
+const search=()=>{
+    const searchContainer=document.getElementById("search").value
+    console.log(searchContainer)
+    const url=`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchContainer}`
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>displayCard(data.data))
 }
