@@ -12,6 +12,7 @@ const dynamicbtn=(btnid)=>{
     }
     const btnId=document.getElementById(btnid)
     btnId.classList.add("active")
+    
 
     if(btnid==="all"){
         displayCard(allIsues)
@@ -20,15 +21,22 @@ const dynamicbtn=(btnid)=>{
        const filtered=allIsues.filter(card=>btnid===card.status)
        displayCard(filtered)
     }
+    spinner.classList.add("hidden")
 }
 
 
 // load card
 const  loadCard=()=>{
+    const spinner=document.getElementById("spinner")
+    console.log(spinner)
+    spinner.classList.remove("hidden")
+    spinner.classList.add("flex")
     const url="https://phi-lab-server.vercel.app/api/v1/lab/issues"
     fetch(url)
     .then(res=>res.json())
+   
     .then(data=>{
+         spinner.classList.add("hidden")
         allIsues=data.data
         displayCard(allIsues)
     })
@@ -59,9 +67,9 @@ const displayCard=(cards)=>{
    for (const card of cards) {
     console.log(card)
     const newdiv=document.createElement("div")
-    newdiv.className = "w-full h-full  p-5 space-y-4  rounded-lg overflow-hidden ";
+    newdiv.className = "flex flex-col w-full h-full p-5 space-y-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm";
     newdiv.innerHTML=`
-       <div class="w-[300px] shadow-lg p-5 space-y-4 id="child-container">
+       <div class="w-full shadow-lg p-5 space-y-4 h-full id="child-container">
             <!-- prioty -->
             <div class="flex justify-between items-center  ">
             <div>
@@ -76,14 +84,14 @@ const displayCard=(cards)=>{
             <p class="line-clamp-2 text-gray-400">${card.description}</p>
         </div>
         <!-- level -->
-         <div class="flex gap-2 ">
+         <div class="flex gap-2 justify-center">
             <!-- bug  -->
             <div class="flex items-center gap-1 bg-red-200 px-3 rounded-md ">
                 <div>
                     <img class="w-3" src="./B13-A5-Github-Issue-Tracker/assets/Vector.png" alt="">
                 </div>
                 <div>
-                    <p class="  text-red-500 font-semibold">${card.labels[0]}</p>
+                    <p class="  text-red-500 text-sm font-semibold">${card.labels[0]}</p>
                 </div>
             </div>
             <!-- help -->
@@ -92,7 +100,7 @@ const displayCard=(cards)=>{
                     <img class="w-4" src="./B13-A5-Github-Issue-Tracker/assets/Vector (1).png" alt="">
                 </div>
                 <div>
-                    <p class="text-yellow-600 font-semibold ">${card.labels[1]}</p>
+                    <p class="text-yellow-600 text-sm font-semibold ">${card.labels[1]}</p>
                 </div>
             </div>
          </div>

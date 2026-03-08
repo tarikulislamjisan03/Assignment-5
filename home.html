@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <style>
     .geist{
         
@@ -113,13 +114,20 @@
     </div>
   </section>
   <!-- card section -->
-   <section>
-    <div id="card-container" class="shadow-md bg-white min-h-screen mt-10 w-[365px]  rounded-md  md:w-[1350px] mx-auto p-3 grid md:grid-cols-4  grid-cols-1 gap-5">
-        <div id="child-container">
-
-        </div>
+   <section class="">
+    <div id="card-container" class="shadow-md  bg-white min-h-screen mt-10 w-full  rounded-md  md:w-[1350px] mx-auto p-3 grid md:grid-cols-4  grid-cols-1 gap-5">
+        <div id="child-container" class="" >
+  
+      
+       
     </div>
+      <!-- loading spinner -->
+    <div id="spinner" class="hidden justify-center items-center w-full py-20 min-h-[400px]">
+    <span class="loading loading-dots loading-xl text-blue-600"></span>
+</div>
    </section>
+  
+ 
     </main>
     <script src="script.js"></script>
 </body>
