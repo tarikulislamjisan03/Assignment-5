@@ -73,10 +73,12 @@ const displayCard=(cards)=>{
             <!-- prioty -->
             <div class="flex justify-between items-center  ">
             <div>
-                <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
+                <img src="${card.status === 'open' ? './B13-A5-Github-Issue-Tracker/assets/Open-Status.png' : './B13-A5-Github-Issue-Tracker/assets/Closed- Status .png'}" alt="closed">
             </div>
-            <div>
-                <p class="bg-blue-400 px-4 py-1 rounded-md">${card.priority}</p>
+            <div >
+                <p class="px-4 py-1 rounded-md ${card.priority === 'high' ? 'bg-red-200 text-red-600' : card.priority === 'medium' ? 'bg-yellow-200 text-yellow-600' : 'bg-gray-200 text-gray-600'}">
+                ${card.priority}
+                </p>
             </div>
         </div>
         <div>
@@ -86,21 +88,21 @@ const displayCard=(cards)=>{
         <!-- level -->
          <div class="flex gap-2 justify-center">
             <!-- bug  -->
-            <div class="flex items-center gap-1 bg-red-200 px-3 rounded-md ">
+            <div class="flex items-center gap-1 bg-red-200 px-3 rounded-md h-10 ">
                 <div>
                     <img class="w-3" src="./B13-A5-Github-Issue-Tracker/assets/Vector.png" alt="">
                 </div>
                 <div>
-                    <p class="  text-red-500 text-sm font-semibold">${card.labels[0]}</p>
+                    <p class="  text-red-500 text-sm font-semibold">${card.labels[0] || "Not Found"}</p>
                 </div>
             </div>
             <!-- help -->
-            <div class="flex items-center gap-1  bg-yellow-100 px-3 py-1 rounded-md ">
+            <div class="flex items-center gap-1  bg-yellow-100 px-3 py-1 h-10 rounded-md ">
                 <div>
                     <img class="w-4" src="./B13-A5-Github-Issue-Tracker/assets/Vector (1).png" alt="">
                 </div>
                 <div>
-                    <p class="text-yellow-600 text-sm font-semibold ">${card.labels[1]}</p>
+                    <p class="text-yellow-600 text-sm font-semibold ">${card.labels[1] || "Not Found"}</p>
                 </div>
             </div>
          </div>
@@ -135,3 +137,5 @@ const search=()=>{
     .then(res=>res.json())
     .then(data=>displayCard(data.data))
 }
+
+
