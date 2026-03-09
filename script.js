@@ -69,7 +69,7 @@ const displayCard=(cards)=>{
     const newdiv=document.createElement("div")
     newdiv.className = "flex flex-col w-full h-full p-5 space-y-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm";
     newdiv.innerHTML=`
-       <div onclick="openModal(${card.id})" class="w-full shadow-lg p-5 space-y-4 h-full id="child-container">
+       <div onclick="openModal(${card.id})" class="w-full shadow-lg p-5 space-y-4 h-full" id="child-container">
             <!-- prioty -->
             <div class="flex justify-between items-center  ">
             <div>
@@ -86,23 +86,23 @@ const displayCard=(cards)=>{
             <p class="line-clamp-2 text-gray-400">${card.description}</p>
         </div>
         <!-- level -->
-         <div class="flex gap-2 justify-center">
-            <!-- bug  -->
-            <div class="flex items-center gap-1 bg-red-200 px-3 rounded-md h-10 ">
-                <div>
-                    <img class="w-3" src="./B13-A5-Github-Issue-Tracker/assets/Vector.png" alt="">
-                </div>
-                <div>
-                    <p class="  text-red-500 text-sm font-semibold">${card.labels[0] || "Not Found"}</p>
-                </div>
-            </div>
+         <div class="flex gap-2 justify-center ">
+
+
+           <div class="flex items-center gap-1 bg-red-200 px-2 rounded-md w-32 justify-center h-10">
+    ${card.labels[0] ? `<img class="w-3" src="./B13-A5-Github-Issue-Tracker/assets/Vector.png" alt="">` : ''}
+    <p class="text-red-500 text-xs font-semibold">${card.labels[0] || "Not Found"}</p>
+</div>
+
+
+            
             <!-- help -->
-            <div class="flex items-center gap-1  bg-yellow-100 px-3 py-1 h-10 rounded-md ">
+            <div class="flex items-center justify-center gap-1  bg-yellow-100 px-2 py-1 h-10 rounded-md w-40">
                 <div>
                     <img class="w-4" src="./B13-A5-Github-Issue-Tracker/assets/Vector (1).png" alt="">
                 </div>
                 <div>
-                    <p class="text-yellow-600 text-sm font-semibold ">${card.labels[1] || "Not Found"}</p>
+                    <p class="text-yellow-600 text-xs font-semibold ">${card.labels[1] || "Not Found"}</p>
                 </div>
             </div>
          </div>
