@@ -1,4 +1,5 @@
-1️⃣ What is the difference between var, let, and const?
+1️⃣ What is the difference between var, let, and const? 
+
 =>These are keywords used to declare variables in JavaScript, but they behave differently:
 
 var: The oldest way to declare variables. It is function-scoped, meaning it doesn't respect block boundaries (like if or for loops). You can redeclare and update it anywhere, which often leads to bugs.
@@ -9,6 +10,7 @@ const: Short for "constant." Like let, it is block-scoped. However, once a value
 
 
 2️⃣ What is the spread operator (...)?
+
 =>The spread operator consists of three dots (...) used to expand or "spread" the elements of an iterable (like an array or object) into individual elements.
 
 Usage: It is commonly used to make copies of arrays, combine multiple arrays, or pass array elements as arguments to a function without modifying the original data.
