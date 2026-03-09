@@ -147,14 +147,38 @@
   
  <!-- modal -->
   <!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="mymodal.showModal()">open modal</button>
+
 <dialog id="mymodal" class="modal">
   <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
+    <!-- priority + status img -->
+    <div class="flex justify-between items-center">
+        <img id="modal-status-img" src="" alt="">
+        <p id="modal-priority" class="px-4 py-1 rounded-md"></p>
+    </div>
+    <!-- title + description -->
+    <div class="mt-3">
+        <h1 id="modal-title" class="text-xl font-bold"></h1>
+        <p id="modal-description" class="text-gray-400"></p>
+    </div>
+    <!-- labels -->
+    <div class="flex gap-2 justify-center mt-3">
+        <div class="flex items-center gap-1 bg-red-200 px-3 rounded-md h-10">
+            <img class="w-3" src="./B13-A5-Github-Issue-Tracker/assets/Vector.png" alt="">
+            <p id="modal-label1" class="text-red-500 text-sm font-semibold"></p>
+        </div>
+        <div class="flex items-center gap-1 bg-yellow-100 px-3 py-1 h-10 rounded-md">
+            <img class="w-4" src="./B13-A5-Github-Issue-Tracker/assets/Vector (1).png" alt="">
+            <p id="modal-label2" class="text-yellow-600 text-sm font-semibold"></p>
+        </div>
+    </div>
+    <hr class="mt-3">
+    <!-- author + date -->
+    <div class="mt-3">
+        <p id="modal-author" class="text-gray-400"></p>
+        <p id="modal-created" class="text-gray-400"></p>
+    </div>
     <div class="modal-action">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
         <button class="btn">Close</button>
       </form>
     </div>

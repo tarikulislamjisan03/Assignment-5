@@ -69,7 +69,7 @@ const displayCard=(cards)=>{
     const newdiv=document.createElement("div")
     newdiv.className = "flex flex-col w-full h-full p-5 space-y-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm";
     newdiv.innerHTML=`
-       <div class="w-full shadow-lg p-5 space-y-4 h-full id="child-container">
+       <div onclick="openModal(${card.id})" class="w-full shadow-lg p-5 space-y-4 h-full id="child-container">
             <!-- prioty -->
             <div class="flex justify-between items-center  ">
             <div>
@@ -137,5 +137,40 @@ const search=()=>{
     .then(res=>res.json())
     .then(data=>displayCard(data.data))
 }
+
+
+
+const openModal=(id)=>{
+const url=`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
+fetch(url)
+.then(res=>res.json())
+.then(data=>{
+    const card=data.data
+    console.log(card)
+    // priority
+    const modalPriority=document.getElementById("modal-priority")
+    modalPriority.innerText=card.priority
+modalPriority.className=`rounded-md px-4 py-1 ${card.priority==="high"?'bg-red-300 text-red-600':card.priority==="medium" ? 'bg-yellow-300 text-yellow-600' : 'bg-gray-300 text-gray-600'}`
+// status img
+const statusimg=document.getElementById("modal-status-img")
+statusimg.src=`${card.status==="open" ? './B13-A5-Github-Issue-Tracker/assets/Open-Status.png' : './B13-A5-Github-Issue-Tracker/assets/Closed- Status.png' }`
+    // title
+    document.getElementById("modal-title").innerText=card.title
+    // description
+    document.getElementById("modal-description").innerText=card.description
+   
+    // author and date
+    document.getElementById("modal-author").innerText=card.author
+    document.getElementById("modal-created").innerText=card.createdAt
+    // labels
+    document.getElementById("modal-label1").innerText=`${card.labels[0] ? card.labels[0] : "Not Found"}`
+    document.getElementById("modal-label2").innerText=`${card.labels[1] ? card.labels[1] : "Not Found"}`
+
+
+     document.getElementById("mymodal").showModal()
+})
+
+}
+
 
 
